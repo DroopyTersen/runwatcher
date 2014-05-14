@@ -1,0 +1,28 @@
+{
+  "name": "RunWatcher",
+  "version": "0.0.0",
+  "description": "App to allow users to broadcast and watch other users' runs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DroopyTersen/runwatcher"
+  },
+  "author": "Andrew Petersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DroopyTersen/runwatcher/issues"
+  },
+  "homepage": "https://github.com/DroopyTersen/runwatcher",
+  "devDependencies": {
+    "gulp": "^3.6.2"
+  },
+  "dependencies": {
+    "express": "^4.2.0",
+    "socket.io": "^0.9.16",
+    "q": "^1.0.1",
+    "serve-favicon": "^2.0.0"
+  }
+}

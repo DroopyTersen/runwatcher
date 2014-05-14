@@ -1,0 +1,24 @@
+{
+  "name": "RunWatcher",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DroopyTersen/runwatcher",
+  "description": "App to allow users and broadcast and watch other users' runs",
+  "main": "index.html",
+  "authors": [
+    "Andrew Petersen"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "bootstrap": "~3.1.1"
+  }
+}
