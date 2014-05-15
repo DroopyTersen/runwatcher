@@ -1,6 +1,6 @@
 var RunBroadcaster = function() {
 	var events = new EventAggregator();
-	var socket = io.connect('http://localhost:5000/realtime');
+	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
 	var locationPublisher = new LocationPublisher({
 		events: events
 	});

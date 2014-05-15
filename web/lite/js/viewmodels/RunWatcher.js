@@ -1,6 +1,6 @@
 var RunWatcher = function() {
 	var events = new EventAggregator();
-	var socket = io.connect('http://192.168.50.168:5000/realtime');
+	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
 	var map = null;
 
 	var bindEvents = function() {
