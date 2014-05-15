@@ -1,7 +1,7 @@
 var RunBroadcaster = function() {
 	var events = new EventAggregator();
 	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
-	var locationPublisher = new LocationPublisher({
+	var locationPublisher = new FakeLocationPublisher({
 		events: events
 	});
 	var map = null;
@@ -11,12 +11,13 @@ var RunBroadcaster = function() {
 	var eventHandlers = {
 		startRun: function() {
 			running = true;
-			map.removePin("warmup");
+			//map.removePin("warmup");
 			map.addPin("runner", lastPosition).animate();
 			map.addPath("runner", [lastPosition]);
 		},
 		updateLocation: function(pos) {
 			lastPosition = pos;
+			console.log("updateLocation");
 			console.log(pos);
 			if (running) {
 				socket.emit("runner:broadcast", pos);
@@ -38,7 +39,7 @@ var RunBroadcaster = function() {
 
 	var createMap = function(startingPosition) {
 		map = new GoogleMap(document.getElementById("map-canvas"), startingPosition, 15);
-		map.addPin("warmup", startingPosition);
+		//ap.addPin("warmup", startingPosition);
 	};
 
 	var updateMap = function(pos) {

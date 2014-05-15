@@ -23,6 +23,7 @@ LocationPublisher.prototype.locationFound = function(pos) {
 	this.trigger(eventName, position);
 	//if an external event aggregator was passed in, trigger that too.
 	if (this.eventAggregator) {
+		console.log("locpub");
 		this.eventAggregator.trigger(eventName, position);
 	}
 };
