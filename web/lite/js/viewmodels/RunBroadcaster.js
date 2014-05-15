@@ -1,7 +1,7 @@
 var RunBroadcaster = function() {
 	var events = new EventAggregator();
 	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
-	var locationPublisher = new FakeLocationPublisher({
+	var locationPublisher = new LocationPublisher({
 		events: events
 	});
 	var map = null;
