@@ -16,9 +16,11 @@ var RunWatcher = function() {
 		console.log("updateMap");
 		console.log(pos);
 		if (!map.getPin("runner")) {
+			console.log("no pin");
 			map.addPin("runner", pos).animate();
 			map.addPath("runner", [pos]);
 		} else {
+			console.log("move pin");
 			map.movePin("runner", pos);
 			map.appendPath("runner", pos);
 		}
