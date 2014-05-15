@@ -20,7 +20,7 @@ var RunWatcher = function() {
 			map.addPin("runner", pos).animate();
 			map.addPath("runner", [pos]);
 		} else {
-			console.log("move pin");
+			console.log(map.getPin("runner"));
 			map.movePin("runner", pos);
 			map.appendPath("runner", pos);
 		}
