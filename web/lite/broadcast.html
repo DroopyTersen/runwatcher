@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvRqx2FVhV-Kf248Ckup_vuUxdRAjKuqo&sensor=false">
+    </script>
+    <script src='js/utils/EventAggregator.js'></script>
+    <script src='js/utils/GoogleMaps.js'></script>
+    <script src='js/services/LocationPublisher.js'></script>
+    <script src='js/services/FakeLocationPublisher.js'></script>
+
+    <script src='js/viewmodels/RunBroadcaster.js'></script>
+
+
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+  <script src="http://192.168.50.168:5000/socket.io/socket.io.js"></script>
+  <script>
+  var vm = RunBroadcaster();
+  vm.init();
+  </script>
+</html>
