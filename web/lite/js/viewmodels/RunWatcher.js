@@ -13,16 +13,14 @@ var RunWatcher = function() {
 	};
 
 	var updateMap = function(pos) {
-		console.log("updateMap");
-		console.log(pos);
 		if (!map.getPin("runner")) {
-			console.log("no pin");
 			map.addPin("runner", pos).animate();
-			map.addPath("runner", [pos]);
+			map.center(pos);
+			//map.addPath("runner", [pos]);
 		} else {
-			console.log(map.getPin("runner"));
 			map.movePin("runner", pos);
-			map.appendPath("runner", pos);
+			map.center(pos);
+			//map.appendPath("runner", pos);
 		}
 	};
 

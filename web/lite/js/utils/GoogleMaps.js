@@ -29,6 +29,9 @@ GoogleMap.prototype.removePin = function(key) {
 		delete this._pins[key];
 	}
 };
+GoogleMap.prototype.center = function(pos) {
+	this._map.setCenter(new Coord(pos.lat, pos.long));
+};
 // == PATHS ==
 GoogleMap.prototype.addPath = function(key, points, options) {
 	this._paths[key] = new GooglePath(this._map, points, options);
