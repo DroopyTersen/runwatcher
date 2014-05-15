@@ -13,6 +13,8 @@ var RunWatcher = function() {
 	};
 
 	var updateMap = function(pos) {
+		console.log("updateMap");
+		console.log(pos);
 		if (!map.getPin("runner")) {
 			map.addPin("runner", pos).animate();
 			map.addPath("runner", [pos]);
