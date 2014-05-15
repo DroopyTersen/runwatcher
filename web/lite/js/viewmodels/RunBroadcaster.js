@@ -1,24 +1,21 @@
 var RunBroadcaster = function() {
 	var events = new EventAggregator();
 	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
-	var locationPublisher = new FakeLocationPublisher({
+	var locationPublisher = new LocationPublisher({
 		events: events
 	});
 	var map = null;
-	var running = false;
+	var running = true;
 	var lastPosition = null;
 
 	var eventHandlers = {
 		startRun: function() {
 			running = true;
-			//map.removePin("warmup");
 			map.addPin("runner", lastPosition).animate();
 			map.addPath("runner", [lastPosition]);
 		},
 		updateLocation: function(pos) {
 			lastPosition = pos;
-			console.log("updateLocation");
-			console.log(pos);
 			if (running) {
 				socket.emit("runner:broadcast", pos);
 			}

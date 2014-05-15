@@ -17,13 +17,11 @@ LocationPublisher.prototype.locationFound = function(pos) {
 	var position = {
 		lat: pos.coords.latitude,
 		long: pos.coords.longitude,
-		accuracy: pos.coords.accuracy,
-		timestamp: (new Date(pos.timestamp)).toJSON()
+		accuracy: pos.coords.accuracy
 	};
 	this.trigger(eventName, position);
 	//if an external event aggregator was passed in, trigger that too.
 	if (this.eventAggregator) {
-		console.log("locpub");
 		this.eventAggregator.trigger(eventName, position);
 	}
 };
