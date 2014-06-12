@@ -1,8 +1,12 @@
+var EventAggregator = require("droopy-events");
+var droopyGps = require("droopy-geolocation");
+var GoogleMap = require("droopy-gmaps").GoogleMap;
+
 var RunBroadcaster = function() {
 	var events = new EventAggregator();
-	//var socket = io.connect('http://localhost:5000/realtime');
-	var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
-	var locationPublisher = new LocationPublisher({
+	var socket = io.connect('http://localhost:5000/realtime');
+	// var socket = io.connect('http://runwatcher.azurewebsites.net/realtime');
+	var locationPublisher = new droopyGps.FakeLocationPublisher({
 		events: events
 	});
 	var map = null;
@@ -60,3 +64,5 @@ var RunBroadcaster = function() {
 		events: events
 	};
 };
+
+module.exports = RunBroadcaster;

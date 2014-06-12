@@ -10,17 +10,11 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvRqx2FVhV-Kf248Ckup_vuUxdRAjKuqo&sensor=false">
     </script>
-    <script src='js/utils/EventAggregator.js'></script>
-    <script src='js/utils/GoogleMaps.js'></script>
-    <script src='js/viewmodels/RunWatcher.js'></script>
   </head>
   <body>
     <div id="map-canvas"/>
   </body>
   <!-- <script src="http://localhost:5000/socket.io/socket.io.js"></script> -->
   <script src="http://runwatcher.azurewebsites.net/socket.io/socket.io.js"></script>
-  <script>
-  var vm = RunWatcher();
-  vm.init();
-  </script>
+  <script src='js/dist/watch.js'></script>
 </html>
